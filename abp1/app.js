@@ -19,6 +19,37 @@
 
 // preguntar(0);
 
+let preguntas = ["Fecha Inicio 'Año/Mes/Dia' \n", "Fecha Termino \n"];
+let respuestas = [];
+let cantHoras = 0;
+
+function preguntar(p) {
+    process.stdout.write(preguntas[p]);
+}
+
+process.stdin.on('data', (data) => {
+    respuestas.push(data.toString().trim());
+    const fecha = new Date(data.toString().trim());
+    contadorHoras(fecha.getDay());
+
+    console.log(fecha.getDay());
+    console.log(pagaDiaria);
+
+    function contadorHoras(dia) {
+        if(dia === 1 || dia === 3 || dia === 5) {
+            pagaDiaria = 7100 * 7;
+        } else if (dia === 2 || dia ===4) {
+            pagaDiaria = 7100 * 8;
+        } else if (dia === 6){
+            pagaDiaria = 12300 * 5;
+        } else return;
+    }
+    
+})
+
+preguntar(0);
+
+/*
 let cantidadHorasLV = 16;
 const valorHoraLV = 7100;
 const subtotalLV = 113600;
@@ -26,34 +57,7 @@ let cantidadHorasSA = 5;
 const valorHoraSA = 12300;
 const subtotalSA = 61500;
 const total = subtotalLV + subtotalSA;
-
-
-let preguntas = ["Fecha Inicio 'Año/Mes/Dia' \n", "Fecha Termino \n"];
-let respuestas = [];
-
-function preguntar(p) {
-    process.stdout.write(preguntas[p]);
-}
-process.stdin.on('data', (data) => {
-    const fecha = new Date(data.toString().trim());
-    contadorHoras(fecha.getDay());
-
-
-    console.log(fecha.getDay());
-
-    function contadorHoras(dia) {
-        if(dia === 1 || dia === 3 || dia === 5) {
-            pagaDiaria = valorHoraLV * 7;
-        } else if (dia === 2 || dia ===4) {
-            pagaDiaria = valorHoraLV * 8;
-        } else if (dia === 6){
-            pagaDiaria = valorHoraSA * 5;
-        } else return;
-    }
-})
-
-preguntar(0);
-
+*/
 
 /*
     respuestas.push(data.toString().trim());
