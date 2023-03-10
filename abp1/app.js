@@ -12,13 +12,12 @@ let diasTrabajados = [];
 
 
 process.stdin.on('data', (data) => {
-    const fecha = new Date(data.toString().trim());
-    
     //Para pasar a las siguiente pregunta o terminar
     respuestas.push(data.toString().trim());
     if (respuestas.length < preguntas.length) {
         preguntar(respuestas.length)
     } else { 
+        //Asignamos las respuestas de las preguntas a la fecha inicio y termino.
         if(respuestas[0]) {
             fechainicio = new Date(respuestas[0]);
         }
@@ -27,11 +26,11 @@ process.stdin.on('data', (data) => {
         }
 
     let fechaactual = fechainicio;
+    //Mientras fecha actual no sea mayor o igual se le ira sumando 1 a fecha actual
     while (fechaactual <= fechatermino){
         diasTrabajados.push(fechaactual.getDay(fechaactual));
         fechaactual = new Date(fechaactual.setDate(fechaactual.getDate() +1));
     }
-
     if (diasTrabajados.length > 0) {
         contadorHoras(diasTrabajados);
     }
@@ -66,7 +65,7 @@ function contadorHoras(diasTrabajados) {
     Valor Hora: $7100
     Subtotal LU-VI: ${cumLV} \n
     Cantidad Horas SA: ${horasSA}
-    Valor Hora: 12300
+    Valor Hora: $12300
     Subtotal SA: ${cumSA} \n
     Total: ${cumLV} + ${cumSA} = ${cumLV + cumSA}
     `)
