@@ -1,0 +1,19 @@
+body {
+    background-color: peru;
+    color: white;
+}
+
+header, footer, main {
+    text-align: center;
+}
+
+.card {
+    background-color: red;
+    color: wheat;
+    width: 200px;
+    margin: 5px;
+}
+.cardss {
+    display: flex;
+    justify-content: center;
+}

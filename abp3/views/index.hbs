@@ -10,9 +10,29 @@
 
 
 <body>
-    <h1>Parallax Flipping Cards</h1>
-    
-    {{#> cards}}
-    {{/cards}}
+    <h1>Adivina el Capital!</h1>
+
+    <div class="wrapper">
+    <div class="cols">
+        {{#each resultado}}
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: {{this.img}}">
+                        <div class="inner">
+                            <p>Continente: {{this.Continente}}</p>
+                            <span>País: {{this.País}}</span>
+                        </div>
+                    </div>
+                    <div class="back" style="background-image: {{this.imagereverse}}">
+                        <div class="inner">
+                        <p>Capital: {{Capital}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    </div>
+
 </body>
 </html>
