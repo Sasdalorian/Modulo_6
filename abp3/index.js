@@ -7,7 +7,7 @@ const path = "./json/cards.json";
 
 hbs.registerPartials(__dirname + "/views/partials");
 app.set("view engine", "hbs");
-app.set("views", "./views")
+app.set("views", "./views");
 app.use(express.static("public"));
 
 

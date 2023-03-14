@@ -1,0 +1,17 @@
+{
+    "almuerzo 1": {
+    "nombre": "cazuela",
+    "precio": 5990,
+    "img": "url(./img/cazuela.jpg)"
+    },
+    "almuerzo 2": {
+    "nombre": "carbonada",
+    "precio": 4990,
+    "img": "url(./img/carbonada.jpg)"
+    },
+    "almuerzo 3": {
+    "nombre": "arroz",
+    "precio": 1000,
+    "img": "url(./img/arroz.jpg)"
+   }
+}

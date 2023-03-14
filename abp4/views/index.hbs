@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abp4</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="card-grid">
+            {{#each resultado}}
+                <a class="card" href="#">
+                <div class="card__background" style="background-image: {{this.img}}"></div>
+                <div class="card__content">
+                    <p class="card__category">{{this.nombre}}</p>
+                    <h3 class="card__heading">${{this.precio}}</h3>
+                </div>
+                </a>
+            {{/each}}
+        </div>
+    </section>
+</body>
+</html>
